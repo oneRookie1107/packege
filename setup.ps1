@@ -59,6 +59,15 @@ choco install mongodb -y --no-progress --params "/InstallDir:$TOOLS_DIR\MongoDB"
 choco install redis-64 -y --no-progress --params "/InstallDir:$TOOLS_DIR\Redis"
 Write-Host "应用工具安装完成" -ForegroundColor Green
 
+# AI 工具提示
+Write-Host "`n========================================" -ForegroundColor Yellow
+Write-Host "AI 工具需要手动下载安装：" -ForegroundColor Yellow
+Write-Host "  - Claude Desktop: https://claude.ai/download" -ForegroundColor Cyan
+Write-Host "  - Trae: https://trae.ai" -ForegroundColor Cyan
+Write-Host "  - Cursor: https://cursor.com" -ForegroundColor Cyan
+Write-Host "  建议安装到: $AI_DIR" -ForegroundColor Gray
+Write-Host "========================================" -ForegroundColor Yellow
+
 # 安装 Node 工具
 Write-Host "`n安装 Node.js 工具..." -ForegroundColor Green
 npm install -g @playwright/test cypress newman whistle
