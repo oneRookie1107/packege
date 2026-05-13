@@ -1,0 +1,283 @@
+{
+  "skillName": "qa-engineer-setup",
+  "version": "3.1.0",
+  "description": "测试工程师新电脑环境自动安装脚本 - 优先GitHub，应用工具安装到D:\tool，新增数据库连接工具",
+  "author": "AI Assistant",
+  "platform": "Windows",
+  "requirements": {
+    "admin": true,
+    "internet": true,
+    "diskSpace": "20GB"
+  },
+  "directories": {
+    "systemDrive": "C:",
+    "toolsDrive": "D:",
+    "toolsRoot": "D:\\tool",
+    "aiTools": "D:\\tool\\ai-tools",
+    "ide": "D:\\tool\\ide",
+    "testTools": "D:\\tool\\test-tools",
+    "efficiency": "D:\\tool\\efficiency"
+  },
+  "github": {
+    "repo": "https://github.com/oneRookie1107/packege",
+    "raw": "https://raw.githubusercontent.com/oneRookie1107/packege/main",
+    "priority": true,
+    "fallback": "chocolatey"
+  },
+  "installRules": {
+    "systemTools": {
+      "location": "C:",
+      "description": "系统级工具，安装到系统默认位置",
+      "packages": [
+        "git",
+        "python",
+        "nodejs",
+        "openjdk",
+        "googlechrome"
+      ]
+    },
+    "appTools": {
+      "location": "D:\\tool",
+      "description": "应用级工具，安装到D盘tool目录",
+      "packages": [
+        "pycharm-community",
+        "trae",
+        "opencode",
+        "claudecode",
+        "mysql",
+        "postgresql",
+        "mongodb",
+        "redis",
+        "navicat",
+        "redis-insight",
+        "postman",
+        "jmeter",
+        "tortoisegit",
+        "jq",
+        "snipaste",
+        "xmind"
+      ]
+    }
+  },
+  "packages": {
+    "systemTools": [
+      {
+        "name": "git",
+        "version": "2.42.0",
+        "type": "system",
+        "githubPath": "/packages/git/Git-2.42.0-64-bit.exe",
+        "chocoName": "git"
+      },
+      {
+        "name": "python",
+        "version": "3.11.6",
+        "type": "system",
+        "githubPath": "/packages/python/python-3.11.6-amd64.exe",
+        "chocoName": "python"
+      },
+      {
+        "name": "nodejs",
+        "version": "20.10.0",
+        "type": "system",
+        "githubPath": "/packages/nodejs/node-v20.10.0-x64.msi",
+        "chocoName": "nodejs"
+      },
+      {
+        "name": "openjdk",
+        "version": "11.0.21",
+        "type": "system",
+        "githubPath": "/packages/openjdk/OpenJDK11U-jdk_x64_windows_hotspot_11.0.21_9.msi",
+        "chocoName": "openjdk"
+      },
+      {
+        "name": "googlechrome",
+        "version": "latest",
+        "type": "system",
+        "githubPath": "/packages/chrome/ChromeSetup.exe",
+        "chocoName": "googlechrome"
+      }
+    ],
+    "appTools": {
+      "ide": [
+        {
+          "name": "pycharm-community",
+          "version": "2023.2.5",
+          "installDir": "D:\\tool\\ide\\PyCharm",
+          "githubPath": "/packages/pycharm/pycharm-community-2023.2.5.exe",
+          "chocoName": "pycharm-community"
+        }
+      ],
+      "aiTools": [
+        {
+          "name": "trae",
+          "version": "1.0.9047",
+          "installDir": "D:\\tool\\ai-tools\\Trae",
+          "description": "字节跳动AI编程IDE",
+          "githubPath": "/packages/ai/Trae-Setup.exe",
+          "downloadUrl": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/1.0.9047/win32/Trae-Setup-x64.exe"
+        },
+        {
+          "name": "opencode",
+          "version": "latest",
+          "installDir": "D:\\tool\\ai-tools\\OpenCode",
+          "description": "OpenCode AI编程工具",
+          "githubPath": "/packages/ai/OpenCodeSetup.exe",
+          "downloadUrl": "https://github.com/opencode-ai/opencode/releases/latest/download/OpenCode-win32-x64.exe"
+        },
+        {
+          "name": "claudecode",
+          "version": "latest",
+          "installDir": "D:\\tool\\ai-tools\\ClaudeCode",
+          "description": "Anthropic Claude Code命令行工具",
+          "githubPath": "/packages/ai/claude-code-cli.exe",
+          "downloadUrl": "https://github.com/anthropics/claude-code/releases/latest/download/claude-code.exe",
+          "type": "cli"
+        }
+      ],
+      "databases": [
+        {
+          "name": "mysql",
+          "version": "8.2.0",
+          "installDir": "D:\\tool\\MySQL",
+          "githubPath": "/packages/mysql/mysql-8.2.0-winx64.msi",
+          "chocoName": "mysql"
+        },
+        {
+          "name": "postgresql",
+          "version": "16.1",
+          "installDir": "D:\\tool\\PostgreSQL",
+          "githubPath": "/packages/postgresql/postgresql-16.1-1-windows-x64.exe",
+          "chocoName": "postgresql"
+        },
+        {
+          "name": "mongodb",
+          "version": "7.0.4",
+          "installDir": "D:\\tool\\MongoDB",
+          "githubPath": "/packages/mongodb/mongodb-windows-x86_64-7.0.4-signed.msi",
+          "chocoName": "mongodb"
+        },
+        {
+          "name": "redis",
+          "version": "5.0.14.1",
+          "installDir": "D:\\tool\\Redis",
+          "githubPath": "/packages/redis/Redis-x64-5.0.14.1.msi",
+          "chocoName": "redis-64"
+        }
+      ],
+      "dbTools": [
+        {
+          "name": "navicat",
+          "version": "16.1",
+          "installDir": "D:\\tool\\Navicat",
+          "description": "数据库管理工具（支持MySQL、PostgreSQL、MongoDB等）",
+          "githubPath": "/packages/navicat/navicat161_premium_cs_x64.exe",
+          "downloadUrl": "https://download.navicat.com/download/navicat161_premium_cs_x64.exe",
+          "chocoName": "navicat-premium"
+        },
+        {
+          "name": "redis-insight",
+          "version": "latest",
+          "installDir": "D:\\tool\\RedisInsight",
+          "description": "Redis 可视化客户端工具",
+          "githubPath": "/packages/redis-insight/Redis-Insight-windows-installer.exe",
+          "downloadUrl": "https://download.redisinsight.redis.com/latest/Redis-Insight-win-installer.exe",
+          "chocoName": "redis-insight"
+        }
+      ],
+      "testTools": [
+        {
+          "name": "postman",
+          "version": "latest",
+          "installDir": "D:\\tool\\test-tools\\Postman",
+          "githubPath": "/packages/postman/Postman-win64-Setup.exe",
+          "chocoName": "postman"
+        },
+        {
+          "name": "jmeter",
+          "version": "5.6.3",
+          "installDir": "D:\\tool\\test-tools\\JMeter",
+          "githubPath": "/packages/jmeter/apache-jmeter-5.6.3.zip",
+          "chocoName": "jmeter",
+          "type": "zip"
+        },
+        {
+          "name": "selenium-chrome-driver",
+          "version": "latest",
+          "installDir": "D:\\tool\\test-tools\\ChromeDriver",
+          "githubPath": "/packages/selenium/chromedriver-win64.zip",
+          "chocoName": "selenium-chrome-driver",
+          "type": "zip"
+        }
+      ],
+      "terminalTools": [
+        {
+          "name": "tortoisegit",
+          "version": "2.15.0.0",
+          "installDir": "D:\\tool\\TortoiseGit",
+          "githubPath": "/packages/tortoisegit/TortoiseGit-2.15.0.0-64bit.msi",
+          "chocoName": "tortoisegit"
+        },
+        {
+          "name": "jq",
+          "version": "latest",
+          "installDir": "D:\\tool\\jq",
+          "githubPath": "/packages/jq/jq-win64.exe",
+          "chocoName": "jq",
+          "type": "binary"
+        }
+      ],
+      "efficiency": [
+        {
+          "name": "snipaste",
+          "version": "2.8.8",
+          "installDir": "D:\\tool\\efficiency\\Snipaste",
+          "githubPath": "/packages/snipaste/Snipaste-2.8.8-x64.zip",
+          "chocoName": "snipaste",
+          "type": "zip"
+        },
+        {
+          "name": "xmind",
+          "version": "2024",
+          "installDir": "D:\\tool\\efficiency\\XMind",
+          "description": "思维导图工具",
+          "githubPath": "/packages/xmind/XMind-2024.exe",
+          "downloadUrl": "https://dl.xmind.cn/XMind-for-Windows-x64bit-24.04.10311-202405.exe",
+          "chocoName": "xmind"
+        }
+      ]
+    }
+  },
+  "npmPackages": {
+    "global": [
+      "@playwright/test",
+      "cypress",
+      "newman",
+      "whistle"
+    ]
+  },
+  "pipPackages": [
+    "pytest",
+    "pytest-html",
+    "pytest-xdist",
+    "requests",
+    "selenium",
+    "Appium-Python-Client",
+    "robotframework"
+  ],
+  "verifyCommands": [
+    "python --version",
+    "node --version",
+    "git --version",
+    "java --version",
+    "pytest --version",
+    "w2 --version"
+  ],
+  "notes": [
+    "系统级工具(Git,Python,Node.js,OpenJDK,Chrome)安装到C盘",
+    "应用级工具(IDE,AI工具,数据库,测试工具等)安装到D:\\tool",
+    "优先从GitHub仓库下载安装包，未找到则使用Chocolatey",
+    "AI工具(Trae,OpenCode,ClaudeCode)需要手动确认安装",
+    "Proxifier为付费软件，建议从原电脑迁移授权版本",
+    "安装完成后请重启电脑以应用环境变量更改"
+  ]
+}
