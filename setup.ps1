@@ -1,8 +1,8 @@
-# 测试工程师环境自动安装脚本 v3.2.0
-# 简化稳定版 - 无语法错误
+# 测试工程师环境自动安装脚本 v3.3.0
+# 简化稳定版 - 移除数据库和终端工具，新增抓包工具说明
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "测试工程师环境自动安装脚本 (v3.2.0)" -ForegroundColor Cyan
+Write-Host "测试工程师环境自动安装脚本 (v3.3.0)" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
 # 检查管理员权限
@@ -50,13 +50,8 @@ Write-Host "`n安装应用工具 (D:)..." -ForegroundColor Green
 choco install pycharm-community -y --no-progress --params "/InstallDir:$IDE_DIR\PyCharm"
 choco install postman -y --no-progress --params "/InstallDir:$TEST_DIR\Postman"
 choco install jmeter -y --no-progress --params "/InstallDir:$TEST_DIR\JMeter"
-choco install tortoisegit -y --no-progress --params "/InstallDir:$TOOLS_DIR\TortoiseGit"
 choco install snipaste -y --no-progress --params "/InstallDir:$EFF_DIR\Snipaste"
 choco install xmind -y --no-progress --params "/InstallDir:$EFF_DIR\XMind"
-choco install mysql -y --no-progress --params "/InstallDir:$TOOLS_DIR\MySQL"
-choco install postgresql -y --no-progress --params "/InstallDir:$TOOLS_DIR\PostgreSQL"
-choco install mongodb -y --no-progress --params "/InstallDir:$TOOLS_DIR\MongoDB"
-choco install redis-64 -y --no-progress --params "/InstallDir:$TOOLS_DIR\Redis"
 Write-Host "应用工具安装完成" -ForegroundColor Green
 
 # AI 工具提示
@@ -66,6 +61,14 @@ Write-Host "  - Claude Desktop: https://claude.ai/download" -ForegroundColor Cya
 Write-Host "  - Trae: https://trae.ai" -ForegroundColor Cyan
 Write-Host "  - Cursor: https://cursor.com" -ForegroundColor Cyan
 Write-Host "  建议安装到: $AI_DIR" -ForegroundColor Gray
+Write-Host "========================================" -ForegroundColor Yellow
+
+# 抓包工具提示
+Write-Host "`n========================================" -ForegroundColor Yellow
+Write-Host "抓包工具需要手动下载安装：" -ForegroundColor Yellow
+Write-Host "  - Proxifier: https://www.proxifier.com/download/" -ForegroundColor Cyan
+Write-Host "  建议安装到: $TEST_DIR\Proxifier" -ForegroundColor Gray
+Write-Host "  注意：Proxifier 为付费软件，需要购买许可证" -ForegroundColor Red
 Write-Host "========================================" -ForegroundColor Yellow
 
 # 安装 Node 工具
@@ -99,4 +102,5 @@ Write-Host "安装完成！请重启电脑以应用更改。" -ForegroundColor C
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "`n安装位置:" -ForegroundColor White
 Write-Host "  C:\\Program Files\\ - Git, Python, Node.js, Java, Chrome" -ForegroundColor Gray
-Write-Host "  D:\\tool\\ - PyCharm, Postman, JMeter, 数据库等" -ForegroundColor Gray
+Write-Host "  D:\\tool\\test-tool\\ - Postman, JMeter, Snipaste, XMind" -ForegroundColor Gray
+Write-Host "  D:\\tool\\ai-tools\\ - AI 工具（需手动安装）" -ForegroundColor Gray

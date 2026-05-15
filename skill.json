@@ -1,7 +1,7 @@
 {
   "skillName": "qa-engineer-setup",
-  "version": "3.1.0",
-  "description": "测试工程师新电脑环境自动安装脚本 - 优先GitHub，应用工具安装到D:\tool，新增数据库连接工具",
+  "version": "3.3.0",
+  "description": "测试工程师新电脑环境自动安装脚本 - 移除数据库和终端工具，新增Proxifier抓包工具",
   "author": "AI Assistant",
   "platform": "Windows",
   "requirements": {
@@ -44,16 +44,9 @@
         "trae",
         "opencode",
         "claudecode",
-        "mysql",
-        "postgresql",
-        "mongodb",
-        "redis",
-        "navicat",
-        "redis-insight",
         "postman",
         "jmeter",
-        "tortoisegit",
-        "jq",
+        "proxifier",
         "snipaste",
         "xmind"
       ]
@@ -134,54 +127,15 @@
           "type": "cli"
         }
       ],
-      "databases": [
+      "networkTools": [
         {
-          "name": "mysql",
-          "version": "8.2.0",
-          "installDir": "D:\\tool\\MySQL",
-          "githubPath": "/packages/mysql/mysql-8.2.0-winx64.msi",
-          "chocoName": "mysql"
-        },
-        {
-          "name": "postgresql",
-          "version": "16.1",
-          "installDir": "D:\\tool\\PostgreSQL",
-          "githubPath": "/packages/postgresql/postgresql-16.1-1-windows-x64.exe",
-          "chocoName": "postgresql"
-        },
-        {
-          "name": "mongodb",
-          "version": "7.0.4",
-          "installDir": "D:\\tool\\MongoDB",
-          "githubPath": "/packages/mongodb/mongodb-windows-x86_64-7.0.4-signed.msi",
-          "chocoName": "mongodb"
-        },
-        {
-          "name": "redis",
-          "version": "5.0.14.1",
-          "installDir": "D:\\tool\\Redis",
-          "githubPath": "/packages/redis/Redis-x64-5.0.14.1.msi",
-          "chocoName": "redis-64"
-        }
-      ],
-      "dbTools": [
-        {
-          "name": "navicat",
-          "version": "16.1",
-          "installDir": "D:\\tool\\Navicat",
-          "description": "数据库管理工具（支持MySQL、PostgreSQL、MongoDB等）",
-          "githubPath": "/packages/navicat/navicat161_premium_cs_x64.exe",
-          "downloadUrl": "https://download.navicat.com/download/navicat161_premium_cs_x64.exe",
-          "chocoName": "navicat-premium"
-        },
-        {
-          "name": "redis-insight",
-          "version": "latest",
-          "installDir": "D:\\tool\\RedisInsight",
-          "description": "Redis 可视化客户端工具",
-          "githubPath": "/packages/redis-insight/Redis-Insight-windows-installer.exe",
-          "downloadUrl": "https://download.redisinsight.redis.com/latest/Redis-Insight-win-installer.exe",
-          "chocoName": "redis-insight"
+          "name": "proxifier",
+          "version": "4.05",
+          "installDir": "D:\\tool\\test-tool\\Proxifier",
+          "description": "网络代理工具，支持抓包和流量转发",
+          "githubPath": "/packages/proxifier/ProxifierSetup.exe",
+          "downloadUrl": "https://www.proxifier.com/download/ProxifierSetup.exe",
+          "chocoName": "proxifier"
         }
       ],
       "testTools": [
@@ -207,23 +161,6 @@
           "githubPath": "/packages/selenium/chromedriver-win64.zip",
           "chocoName": "selenium-chrome-driver",
           "type": "zip"
-        }
-      ],
-      "terminalTools": [
-        {
-          "name": "tortoisegit",
-          "version": "2.15.0.0",
-          "installDir": "D:\\tool\\TortoiseGit",
-          "githubPath": "/packages/tortoisegit/TortoiseGit-2.15.0.0-64bit.msi",
-          "chocoName": "tortoisegit"
-        },
-        {
-          "name": "jq",
-          "version": "latest",
-          "installDir": "D:\\tool\\jq",
-          "githubPath": "/packages/jq/jq-win64.exe",
-          "chocoName": "jq",
-          "type": "binary"
         }
       ],
       "efficiency": [
@@ -274,10 +211,10 @@
   ],
   "notes": [
     "系统级工具(Git,Python,Node.js,OpenJDK,Chrome)安装到C盘",
-    "应用级工具(IDE,AI工具,数据库,测试工具等)安装到D:\\tool",
+    "应用级工具(IDE,AI工具,测试工具,抓包工具等)安装到D:\\tool\\test-tool",
     "优先从GitHub仓库下载安装包，未找到则使用Chocolatey",
     "AI工具(Trae,OpenCode,ClaudeCode)需要手动确认安装",
-    "Proxifier为付费软件，建议从原电脑迁移授权版本",
+    "Proxifier为付费软件，建议从原电脑迁移授权版本或购买正版",
     "安装完成后请重启电脑以应用环境变量更改"
   ]
 }
