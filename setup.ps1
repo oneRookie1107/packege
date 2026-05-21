@@ -1,8 +1,8 @@
-# 测试工程师环境自动安装脚本 v3.3.0
+# 测试工程师环境自动安装脚本 v3.4.0
 # 简化稳定版 - 移除数据库和终端工具，新增抓包工具说明
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "测试工程师环境自动安装脚本 (v3.3.0)" -ForegroundColor Cyan
+Write-Host "测试工程师环境自动安装脚本 (v3.4.0)" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
 # 检查管理员权限
@@ -52,6 +52,7 @@ choco install postman -y --no-progress --params "/InstallDir:$TEST_DIR\Postman"
 choco install jmeter -y --no-progress --params "/InstallDir:$TEST_DIR\JMeter"
 choco install snipaste -y --no-progress --params "/InstallDir:$EFF_DIR\Snipaste"
 choco install xmind -y --no-progress --params "/InstallDir:$EFF_DIR\XMind"
+choco install obsidian -y --no-progress --params "/InstallDir:$EFF_DIR\Obsidian"
 Write-Host "应用工具安装完成" -ForegroundColor Green
 
 # AI 工具提示

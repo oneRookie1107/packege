@@ -1,7 +1,7 @@
 {
   "skillName": "qa-engineer-setup",
-  "version": "3.3.0",
-  "description": "测试工程师新电脑环境自动安装脚本 - 移除数据库和终端工具，新增Proxifier抓包工具",
+  "version": "3.4.0",
+  "description": "测试工程师新电脑环境自动安装脚本 - 新增Proxifier抓包工具和Obsidian笔记工具",
   "author": "AI Assistant",
   "platform": "Windows",
   "requirements": {
@@ -48,7 +48,8 @@
         "jmeter",
         "proxifier",
         "snipaste",
-        "xmind"
+        "xmind",
+        "obsidian"
       ]
     }
   },
@@ -180,6 +181,15 @@
           "githubPath": "/packages/xmind/XMind-2024.exe",
           "downloadUrl": "https://dl.xmind.cn/XMind-for-Windows-x64bit-24.04.10311-202405.exe",
           "chocoName": "xmind"
+        },
+        {
+          "name": "obsidian",
+          "version": "latest",
+          "installDir": "D:\tool\\efficiency\\Obsidian",
+          "description": "知识管理和笔记工具，支持Markdown和双向链接",
+          "githubPath": "/packages/obsidian/Obsidian.Setup.exe",
+          "downloadUrl": "https://github.com/obsidianmd/obsidian-releases/releases/latest/download/Obsidian.Setup.exe",
+          "chocoName": "obsidian"
         }
       ]
     }
@@ -215,6 +225,7 @@
     "优先从GitHub仓库下载安装包，未找到则使用Chocolatey",
     "AI工具(Trae,OpenCode,ClaudeCode)需要手动确认安装",
     "Proxifier为付费软件，建议从原电脑迁移授权版本或购买正版",
-    "安装完成后请重启电脑以应用环境变量更改"
+    "安装完成后请重启电脑以应用环境变量更改",
+    "Obsidian为免费软件，安装后可在D:\tool\\efficiency\\Obsidian中使用"
   ]
 }
