@@ -1,8 +1,8 @@
-# 测试工程师环境自动安装脚本 v3.4.0
-# 简化稳定版 - 移除数据库和终端工具，新增抓包工具说明
+# 测试工程师环境自动安装脚本 v3.5.0
+# 简化稳定版 - 新增微信开发者工具
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "测试工程师环境自动安装脚本 (v3.4.0)" -ForegroundColor Cyan
+Write-Host "测试工程师环境自动安装脚本 (v3.5.0)" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
 # 检查管理员权限
@@ -48,6 +48,7 @@ Write-Host "系统工具安装完成" -ForegroundColor Green
 # 安装应用工具 (D:)
 Write-Host "`n安装应用工具 (D:)..." -ForegroundColor Green
 choco install pycharm-community -y --no-progress --params "/InstallDir:$IDE_DIR\PyCharm"
+choco install wechat-devtools -y --no-progress --params "/InstallDir:$IDE_DIR\WeChatDevTools"
 choco install postman -y --no-progress --params "/InstallDir:$TEST_DIR\Postman"
 choco install jmeter -y --no-progress --params "/InstallDir:$TEST_DIR\JMeter"
 choco install snipaste -y --no-progress --params "/InstallDir:$EFF_DIR\Snipaste"
@@ -70,6 +71,14 @@ Write-Host "抓包工具需要手动下载安装：" -ForegroundColor Yellow
 Write-Host "  - Proxifier: https://www.proxifier.com/download/" -ForegroundColor Cyan
 Write-Host "  建议安装到: $TEST_DIR\Proxifier" -ForegroundColor Gray
 Write-Host "  注意：Proxifier 为付费软件，需要购买许可证" -ForegroundColor Red
+Write-Host "========================================" -ForegroundColor Yellow
+
+# 微信开发者工具备用下载提示
+Write-Host "`n========================================" -ForegroundColor Yellow
+Write-Host "微信开发者工具（如 Chocolatey 安装失败可手动下载）：" -ForegroundColor Yellow
+Write-Host "  - 官方下载页: https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" -ForegroundColor Cyan
+Write-Host "  - 直链(x64): https://servicewechat.com/wxa-dev-logic/download_redirect?type=x64&from=mpwiki" -ForegroundColor Cyan
+Write-Host "  建议安装到: $IDE_DIR\WeChatDevTools" -ForegroundColor Gray
 Write-Host "========================================" -ForegroundColor Yellow
 
 # 安装 Node 工具
@@ -103,5 +112,7 @@ Write-Host "安装完成！请重启电脑以应用更改。" -ForegroundColor C
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "`n安装位置:" -ForegroundColor White
 Write-Host "  C:\\Program Files\\ - Git, Python, Node.js, Java, Chrome" -ForegroundColor Gray
-Write-Host "  D:\\tool\\test-tool\\ - Postman, JMeter, Snipaste, XMind" -ForegroundColor Gray
+Write-Host "  D:\\tool\\ide\\ - PyCharm, WeChatDevTools" -ForegroundColor Gray
+Write-Host "  D:\\tool\\test-tools\\ - Postman, JMeter" -ForegroundColor Gray
+Write-Host "  D:\\tool\\efficiency\\ - Snipaste, XMind, Obsidian" -ForegroundColor Gray
 Write-Host "  D:\\tool\\ai-tools\\ - AI 工具（需手动安装）" -ForegroundColor Gray

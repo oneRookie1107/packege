@@ -1,7 +1,7 @@
 {
   "skillName": "qa-engineer-setup",
-  "version": "3.4.0",
-  "description": "测试工程师新电脑环境自动安装脚本 - 新增Proxifier抓包工具和Obsidian笔记工具",
+  "version": "3.5.0",
+  "description": "测试工程师新电脑环境自动安装脚本 - 新增微信开发者工具",
   "author": "AI Assistant",
   "platform": "Windows",
   "requirements": {
@@ -44,6 +44,7 @@
         "trae",
         "opencode",
         "claudecode",
+        "wechat-devtools",
         "postman",
         "jmeter",
         "proxifier",
@@ -99,6 +100,15 @@
           "installDir": "D:\\tool\\ide\\PyCharm",
           "githubPath": "/packages/pycharm/pycharm-community-2023.2.5.exe",
           "chocoName": "pycharm-community"
+        },
+        {
+          "name": "wechat-devtools",
+          "version": "latest",
+          "installDir": "D:\\tool\\ide\\WeChatDevTools",
+          "description": "微信小程序/小游戏开发者工具",
+          "githubPath": "/packages/wechat-devtools/wechat_devtools.exe",
+          "downloadUrl": "https://servicewechat.com/wxa-dev-logic/download_redirect?type=x64&from=mpwiki",
+          "chocoName": "wechat-devtools"
         }
       ],
       "aiTools": [
@@ -226,6 +236,7 @@
     "AI工具(Trae,OpenCode,ClaudeCode)需要手动确认安装",
     "Proxifier为付费软件，建议从原电脑迁移授权版本或购买正版",
     "安装完成后请重启电脑以应用环境变量更改",
-    "Obsidian为免费软件，安装后可在D:\tool\\efficiency\\Obsidian中使用"
+    "Obsidian为免费软件，安装后可在D:\tool\\efficiency\\Obsidian中使用",
+    "微信开发者工具用于小程序/小游戏开发与测试，可通过Chocolatey或官方下载链接安装"
   ]
 }
